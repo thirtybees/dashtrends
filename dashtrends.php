@@ -24,7 +24,7 @@
 *  International Registered Trademark & Property of PrestaShop SA
 */
 
-if (!defined('_PS_VERSION_'))
+if (!defined('_TB_VERSION_'))
 	exit;
 
 class Dashtrends extends Module
@@ -39,8 +39,8 @@ class Dashtrends extends Module
 	{
 		$this->name = 'dashtrends';
 		$this->tab = 'dashboard';
-		$this->version = '0.8.1';
-		$this->author = 'PrestaShop';
+		$this->version = '1.0.0';
+		$this->author = 'thirty bees';
 
 		$this->push_filename = _PS_CACHE_DIR_.'push/trends';
 		$this->allow_push = true;
