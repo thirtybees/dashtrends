@@ -45,7 +45,7 @@ class Dashtrends extends Module
     {
         $this->name = 'dashtrends';
         $this->tab = 'dashboard';
-        $this->version = '2.0.1';
+        $this->version = '2.0.2';
         $this->author = 'thirty bees';
 
         $this->push_filename = _PS_CACHE_DIR_.'push/trends';
@@ -54,7 +54,6 @@ class Dashtrends extends Module
         parent::__construct();
         $this->displayName = $this->l('Dashboard Trends');
         $this->description = $this->l('Adds a block with a graphical representation of the development of your store(s) based on selected key data.');
-        $this->ps_versions_compliancy = array('min' => '1.6', 'max' => _PS_VERSION_);
     }
 
     /**
