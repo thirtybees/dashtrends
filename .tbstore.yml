@@ -1,0 +1,13 @@
+module_name: Dashboard Trends
+compatible_versions: 1.0.0+
+author: thirty bees
+category: back office
+tags:
+  - statistics
+  - forecast
+  - revenue
+description_short: Adds a block with a graphical representation of the development of your store(s) based on selected key data.
+description: description.md
+images:
+  - image-1.png
+license: AFL 3.0
