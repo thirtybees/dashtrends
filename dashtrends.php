@@ -47,6 +47,7 @@ class Dashtrends extends Module
         $this->tab = 'dashboard';
         $this->version = '2.0.2';
         $this->author = 'thirty bees';
+        $this->need_instance = 0;
 
         $this->push_filename = _PS_CACHE_DIR_.'push/trends';
         $this->allow_push = true;
@@ -54,6 +55,7 @@ class Dashtrends extends Module
         parent::__construct();
         $this->displayName = $this->l('Dashboard Trends');
         $this->description = $this->l('Adds a block with a graphical representation of the development of your store(s) based on selected key data.');
+        $this->tb_versions_compliancy = '> 1.0.0';
     }
 
     /**
