@@ -6,6 +6,7 @@ tags:
   - statistics
   - forecast
   - revenue
+  - dashtrends
 description_short: Adds a block with a graphical representation of the development of your store(s) based on selected key data.
 description: description.md
 images:
