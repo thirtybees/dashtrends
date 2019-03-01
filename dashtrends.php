@@ -90,7 +90,6 @@ class Dashtrends extends Module
     {
         $this->context->smarty->assign([
             'currency'                     => $this->context->currency,
-            '_PS_PRICE_DISPLAY_PRECISION_' => _PS_PRICE_DISPLAY_PRECISION_,
         ]);
 
         return $this->display(__FILE__, 'dashboard_zone_two.tpl');
