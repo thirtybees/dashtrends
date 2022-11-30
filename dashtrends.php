@@ -32,14 +32,34 @@ if (!defined('_TB_VERSION_')) {
  */
 class Dashtrends extends Module
 {
+    /**
+     * @var array
+     */
     protected $dashboard_data;
+
+    /**
+     * @var array
+     */
     protected $dashboard_data_compare;
+
+    /**
+     * @var array
+     */
     protected $dashboard_data_sum;
+
+    /**
+     * @var array
+     */
     protected $dashboard_data_sum_compare;
+
+    /**
+     * @var array
+     */
     protected $data_trends;
 
     /**
      * Dashtrends constructor.
+     * @throws PrestaShopException
      */
     public function __construct()
     {
@@ -61,6 +81,8 @@ class Dashtrends extends Module
 
     /**
      * @return bool
+     * @throws PrestaShopDatabaseException
+     * @throws PrestaShopException
      */
     public function install()
     {
@@ -86,6 +108,8 @@ class Dashtrends extends Module
      * @param $params
      *
      * @return string
+     * @throws PrestaShopException
+     * @throws SmartyException
      */
     public function hookDashboardZoneTwo($params)
     {
@@ -101,6 +125,7 @@ class Dashtrends extends Module
      * @param string $dateTo
      *
      * @return array
+     * @throws PrestaShopException
      */
     protected function getData($dateFrom, $dateTo)
     {
@@ -251,6 +276,7 @@ class Dashtrends extends Module
      * @param array $params
      *
      * @return array
+     * @throws PrestaShopException
      */
     public function hookDashboardData($params)
     {
