@@ -367,18 +367,13 @@ class Dashtrends extends Module
         foreach (array_keys($this->dashboard_data) as $chartKey) {
             $chartData[$chartKey] = $chartDataCompare[$chartKey] = [];
 
-            if (!$count = count($this->dashboard_data[$chartKey])) {
+            if (! $this->dashboard_data[$chartKey]) {
                 continue;
             }
-
-            // We calibrate 100% to the mean
-            $calibration = array_sum($this->dashboard_data[$chartKey]) / $count;
 
             foreach ($this->dashboard_data[$chartKey] as $key => $value) {
                 $chartData[$chartKey][] = [$key, $value];
             }
-            // min(10) is there to limit the growth to 1000%, beyond this limit it becomes unreadable
-            //$chart_data[$chart_key][] = array(1000 * $key, $calibration ? min(10, $value / $calibration) : 0);
 
             if ($this->dashboard_data_compare) {
                 foreach ($this->dashboard_data_compare[$chartKey] as $key => $value) {
