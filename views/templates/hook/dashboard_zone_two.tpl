@@ -28,7 +28,7 @@
   var currency_blank = {$currency->blank|intval};
 </script>
 <div class="clearfix"></div>
-<section id="dashtrends" class="panel widget{if $allow_push} allow_push{/if}">
+<section id="dashtrends" class="panel widget">
   <header class="panel-heading">
     <i class="icon-bar-chart"></i> {l s='Dashboard' mod='dashtrends'}
     <span class="panel-heading-action">
