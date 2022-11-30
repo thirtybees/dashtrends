@@ -280,7 +280,7 @@ class Dashtrends extends Module
      */
     public function hookDashboardData($params)
     {
-        $this->currency = clone $this->context->currency;
+        $currency = $this->context->currency;
 
         // Retrieve, refine and add up data for the selected period
         $tmpData = $this->getData($params['date_from'], $params['date_to']);
@@ -297,18 +297,18 @@ class Dashtrends extends Module
             $this->dashboard_data_compare = $this->translateCompareData($this->dashboard_data, $this->dashboard_data_compare);
         }
 
-        $salesScore = Tools::displayPrice($this->dashboard_data_sum['sales'], $this->currency).$this->addTaxSuffix();
+        $salesScore = Tools::displayPrice($this->dashboard_data_sum['sales'], $currency).$this->addTaxSuffix();
 
-        $cartValueScore = Tools::displayPrice($this->dashboard_data_sum['average_cart_value'], $this->currency).$this->addTaxSuffix();
+        $cartValueScore = Tools::displayPrice($this->dashboard_data_sum['average_cart_value'], $currency).$this->addTaxSuffix();
 
-        $netProfitScore = Tools::displayPrice($this->dashboard_data_sum['net_profits'], $this->currency).$this->addTaxSuffix();
+        $netProfitScore = Tools::displayPrice($this->dashboard_data_sum['net_profits'], $currency).$this->addTaxSuffix();
 
         return [
             'data_value'  => [
                 'sales_score'           => $salesScore,
-                'orders_score'          => Tools::displayNumber($this->dashboard_data_sum['orders'], $this->currency),
+                'orders_score'          => Tools::displayNumber($this->dashboard_data_sum['orders'], $currency),
                 'cart_value_score'      => $cartValueScore,
-                'visits_score'          => Tools::displayNumber($this->dashboard_data_sum['visits'], $this->currency),
+                'visits_score'          => Tools::displayNumber($this->dashboard_data_sum['visits'], $currency),
                 'conversion_rate_score' => round(100 * $this->dashboard_data_sum['conversion_rate'], 2).'%',
                 'net_profits_score'     => $netProfitScore,
             ],
