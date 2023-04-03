@@ -26,6 +26,7 @@
   var currency_format = {$currency->format|floatval};
   var currency_sign = '{$currency->sign|@addcslashes:'\''}';
   var currency_blank = {$currency->blank|intval};
+  var priceDisplayPrecision = {if ($currency->decimals)}{$smarty.const._PS_PRICE_DISPLAY_PRECISION_}{else}0{/if};
 </script>
 <div class="clearfix"></div>
 <section id="dashtrends" class="panel widget">
