@@ -213,23 +213,19 @@ class Dashtrends extends Module
      */
     protected function addupData($data)
     {
-        $summing = [
-            'sales'              => 0,
-            'orders'             => 0,
-            'average_cart_value' => 0,
-            'visits'             => 0,
-            'conversion_rate'    => 0,
-            'net_profits'        => 0,
+        $sales = array_sum($data['sales']);
+        $orders = array_sum($data['orders']);
+        $visits = array_sum($data['visits']);
+        $netProfits = array_sum($data['net_profits']);
+
+        return [
+            'sales'              => $sales,
+            'orders'             => $orders,
+            'average_cart_value' => $orders ? ($sales / $orders) : 0,
+            'visits'             => $visits,
+            'conversion_rate'    => $visits ? ($orders / $visits) : 0,
+            'net_profits'        => $netProfits,
         ];
-
-        $summing['sales'] = array_sum($data['sales']);
-        $summing['orders'] = array_sum($data['orders']);
-        $summing['average_cart_value'] = $summing['sales'] ? $summing['sales'] / $summing['orders'] : 0;
-        $summing['visits'] = array_sum($data['visits']);
-        $summing['conversion_rate'] = $summing['visits'] ? $summing['orders'] / $summing['visits'] : 0;
-        $summing['net_profits'] = array_sum($data['net_profits']);
-
-        return $summing;
     }
 
     /**
