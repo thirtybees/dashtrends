@@ -19,7 +19,10 @@
 
 /**
  * @param Dashtrends $module
+ *
  * @return bool
+ * @throws PrestaShopDatabaseException
+ * @throws PrestaShopException
  */
 function upgrade_module_2_1_0($module)
 {

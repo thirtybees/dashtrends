@@ -101,7 +101,7 @@ class Dashtrends extends Module
     }
 
     /**
-     * @param $params
+     * @param array $params
      *
      * @return string
      * @throws PrestaShopException
@@ -158,9 +158,9 @@ class Dashtrends extends Module
     }
 
     /**
-     * @param $dateFrom
-     * @param $dateTo
-     * @param $grossData
+     * @param string $dateFrom
+     * @param string $dateTo
+     * @param array $grossData
      *
      * @return array
      */
