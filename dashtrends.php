@@ -318,10 +318,10 @@ class Dashtrends extends Module
     }
 
     /**
-     * @param mixed $normal
-     * @param mixed $compare
+     * @param array[] $normal
+     * @param array[] $compare
      *
-     * @return array
+     * @return array[]
      */
     protected function translateCompareData($normal, $compare)
     {
@@ -340,8 +340,9 @@ class Dashtrends extends Module
             $compareSize = $compareMax - $compareMin;
 
             $translatedArray[$key] = array();
+            $coef = $compareSize ? ($normalSize / $compareSize) : 1;
             foreach ($dateArray as $compareDate => $value) {
-                $translation = $normalMin + ($compareDate - $compareMin) * ($normalSize / $compareSize);
+                $translation = $normalMin + ($compareDate - $compareMin) * $coef;
                 $translatedArray[$key][number_format($translation, 0, '', '')] = $value;
             }
         }
